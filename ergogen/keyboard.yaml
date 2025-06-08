@@ -1,0 +1,81 @@
+meta:
+  name: Navigator
+
+presets:
+  # These presets provide different layout options
+  # Select a preset in the `units` section below
+  # Note: The appropriate switch footprint will still need to be set in the `pcb` section
+  mx:
+    # Key and keycap measures
+    kx: u # spacing between key centers (X-axis)
+    ky: u # spacing between key centers (Y-axis)
+    ks: 19 # horizontal space between columns (default: 19)
+    kp: 19 # vertical padding between keys (deafult: 19)
+    kcow: 14 # key cutout hole width (cherry: 14, choc: 13.8)
+    kcoh: 14 # key cutout hole height (cherry: 14, choc: 13.8)
+    keycw: 18 # keycap width (cherry: 18, choc: 17.5)
+    keych: 18 # keycap height (cherry: 18, choc: 16.5)
+    led_pos_x: 0 # Led X position relative to the switch center
+    led_pos_y: -4.75 # Led Y position relative to the switch center
+    led_rotation: 180 # Led rotation
+    vertical_underglow_shift: -0.5 kp # How much to shift underglow leds tied to keys
+    vertical_diode_shift: 1.325 # How much to shift to avoid overlap
+    horizontal_diode_shift: 7.4
+    diode_rotation: 0 # Diode rotation
+    switch_rotation: 0 # Hotswap north, led south
+
+points:
+  key:
+    
+  zones:
+    main:
+      anchor:
+        shift: [5,5]
+      rows:
+        bottom:
+        middle:
+        top:    
+      columns:
+        column1:
+        column2:
+        column3:
+        column4:
+
+    direction_left:
+      anchor:
+        shift: [15,-40]
+      rows:
+      columns:
+        dcolumn1:
+
+    direction_right:
+      anchor:
+        shift: [55,-40]
+      rows:
+      columns:
+        dcolumn1:
+    direction_vertical:
+      anchor:
+        shift: [35,-50]
+      rows:
+        row_up:
+        row_down:
+outlines:
+  holes:
+    - where: true
+      what: rectangle
+      size: 18
+  edge:
+    - where: true
+      what: rectangle
+      size: 18
+      bound: true
+  board:
+    - what: rectangle
+      size: [120,120]
+
+pcb:
+  navPad:
+    outlines:
+    - outline: board 
+    footprints:
